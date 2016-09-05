@@ -66,24 +66,13 @@
       }
     },
 
-    "_artifactsLocation": {
-      "type": "string",
-      "metadata": {
-        "description": "Auto-generated container in staging storage account to receive post-build staging folder upload"
-      }
-    },
-    "_artifactsLocationSasToken": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Auto-generated token to access _artifactsLocation"
-      }
-    },
     "fileserverName": {
       "type": "string",
       "minLength": 1
     }
   },
   "variables": {
+    "assetlocation": "https://raw.githubusercontent.com/bytezn/softwaredefined/master/fileserverdomainjoined",
     "imagePublisher": "MicrosoftWindowsServer",
     "adNicIPAddress": "10.0.0.4",
     "fsNicIPAddress": "10.0.0.5",
@@ -270,8 +259,7 @@
             "typeHandlerVersion": "2.9",
             "autoUpgradeMinorVersion": true,
             "settings": {
-              "modulesUrl": "[concat(parameters('_artifactsLocation'), '/', 'dscDCConfiguration.ps1.zip')]",
-              "sasToken": "[parameters('_artifactsLocationSasToken')]",
+              "modulesUrl": "[concat(variables('assetlocation'), '/', 'dscDCConfiguration.ps1.zip')]",
               "configurationFunction": "[variables('dscDCConfigurationFunction')]",
               "properties": {
                 "nodeName": "[variables('vmName')]",
@@ -299,7 +287,7 @@
       "apiVersion": "2015-06-15",
       "dependsOn": [
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
-     
+
       ],
       "tags": {
         "displayName": "fileserverNic"
@@ -320,9 +308,9 @@
 
         "dnsSettings": {
           "dnsServers": [ "10.0.0.4" ]
-          
-        }  
-            
+
+        }
+
       }
 
     },
