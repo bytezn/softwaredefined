@@ -92,37 +92,18 @@
       "metadata": {
         "description": "Shared key (PSK) for IPSec tunnel"
       }
-    },
-    "newStorageAccountName": {
-      "type": "string",
-      "metadata": {
-        "description": "Storage Account Name for VM Disk"
-      }
-    },
-    "storageAccountType": {
-      "type": "string",
-      "allowedValues": [
-        "Standard_LRS",
-        "Standard_GRS",
-        "Standard_RAGRS",
-        "Premium_LRS"
-      ],
-      "metadata": {
-        "description": "The type of the Storage Account created"
-      },
-      "defaultValue": "Standard_LRS"
     }
-  },
+  
+},
   "variables": {
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
     "gatewaySubnetRef": "[concat(variables('vnetID'),'/subnets/','GatewaySubnet')]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
-    "api-version": "2015-06-15",
-    "storage-api-version": "2015-05-01-preview"
+    "api-version": "2015-06-15"
   },
   "resources": [
     {
-      "apiVersion": "[variables('api-version')]",
+      "apiversion": "2015-06-15",
       "type": "Microsoft.Network/localNetworkGateways",
       "name": "[parameters('localGatewayName')]",
       "location": "[resourceGroup().location]",
@@ -136,7 +117,7 @@
       }
     },
     {
-      "apiVersion": "[variables('api-version')]",
+      "apiversion": "2015-06-15",
       "name": "[parameters('connectionName')]",
       "type": "Microsoft.Network/connections",
       "location": "[resourceGroup().location]",
@@ -157,7 +138,7 @@
       }
     },
     {
-      "apiVersion": "[variables('api-version')]",
+      "apiversion": "2015-06-15",
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('virtualNetworkName')]",
       "location": "[resourceGroup().location]",
@@ -184,7 +165,7 @@
       }
     },
     {
-      "apiVersion": "[variables('api-version')]",
+      "apiversion": "2015-06-15",
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[parameters('gatewayPublicIPName')]",
       "location": "[resourceGroup().location]",
@@ -193,16 +174,7 @@
       }
     },
     {
-      "apiVersion": "[variables('storage-api-version')]",
-      "name": "[parameters('newStorageAccountName')]",
-      "location": "[resourceGroup().location]",
-      "type": "Microsoft.Storage/storageAccounts",
-      "properties": {
-        "accountType": "[parameters('storageAccountType')]"
-      }
-    },
-    {
-      "apiVersion": "[variables('api-version')]",
+      "apiversion": "2015-06-15",
       "type": "Microsoft.Network/virtualNetworkGateways",
       "name": "[parameters('gatewayName')]",
       "location": "[resourceGroup().location]",
