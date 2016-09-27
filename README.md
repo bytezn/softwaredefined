@@ -1,2 +1,0 @@
-# softwaredefined
-Software Defined Computing
