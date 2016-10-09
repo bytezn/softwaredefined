@@ -241,7 +241,6 @@
     "fileserver2OSDiskName": "fileserver2OSDisk",
     "fileserverVmSize": "Standard_D1",
     "fileavailabilitysetName": "fileavailset",
-    "assetlocation":"https://raw.githubusercontent.com/bytezn/softwaredefined/master/fsdswebvltplcmultibkups2sbaldfs",
     "fileserver2VnetID": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
     "fileserver2StorageAccountContainerName": "vhds",
     "fileserver2NicName": "[concat(parameters('fileserver2Name'), 'NetworkInterface')]",
@@ -260,6 +259,7 @@
     "fsvmcontainer": "[concat('vm;iaasvmcontainerv2;',variables('resourcegroup'),';',parameters('fileserver2name'))]",
     "vpntype": "RouteBased",
     "localGatewayName": "localGateway",
+    "assetlocation": "https://raw.githubusercontent.com/bytezn/softwaredefined/master/fsdswebvltplcmultibkups2sbaldfs-gthub",
     "lbname": "loadbalancer",
     "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbName'))]",
     "frontEndIPConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
@@ -1040,6 +1040,13 @@
                   },
               "storageProfile": {
 
+                "imageReference": {
+                  "publisher": "[variables('imagePublisher')]",
+                  "offer": "[variables('imageOffer')]",
+                  "sku": "[parameters('windowsOSVersion')]",
+                  "version": "latest"
+                },
+
                 "osDisk": {
                   "name": "osdisk",
                   "vhd": {
@@ -1048,6 +1055,7 @@
                   "caching": "ReadWrite",
                   "createOption": "FromImage"
                 }
+                                          
               },
                   "networkProfile": {
                     "networkInterfaces": [
