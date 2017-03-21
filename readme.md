@@ -46,7 +46,7 @@ This template will add to the template above by adding automatic data protection
 
 ## Parameters
 
-## Vault & Policy
+## Vault & Policy (agent only feature for workloads on Azure Stack)
 
 Mandatory parameters required to auto configure the backup vault and policy. change the parameters to match whether policy is daily, weekly or other.
 
