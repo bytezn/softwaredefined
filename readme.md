@@ -51,6 +51,7 @@ This template will add to the template above by adding automatic data protection
 ## Vault & Policy (agent only feature for workloads on Azure Stack)
 
 Mandatory parameters required to auto configure the backup vault and policy. change the parameters to match whether policy is daily, weekly or other.
+These parameters below are required for the OMS Backup configuration in Azure at runtime. It is not available for Azure Stack.
 
 "vaultName": "vmbackupvault"
 "policyName":"MyPolicy" 
@@ -68,7 +69,9 @@ Mandatory parameters required to auto configure the backup vault and policy. cha
 
 ## Auto Protect
 
-Mandatory parameters required to automatically configure the backup of the VMs being protected. use  these as parameters or variables.
+Mandatory parameters required to automatically configure the backup of the VMs being protected. use  these as parameters or variables. These parameters below are required to integrate existing
+workloads into Azure backup. Azure Stack does not natively have Backup features or capabilities and as such these workloads will integrate into Azure Backup.
+
 
  protection container
  iaasvmcontainer;iaasvmcontainerv2;my-resource-group;my-arm-vm 
@@ -79,9 +82,13 @@ Mandatory parameters required to automatically configure the backup of the VMs b
 
 ## 9 Server datacenter with apps + Backup + OMS Log Analytics
 
+This template will build the following, It will also complete OMS integration as well as build full site to site connectivity.
 That is 6 servers + 1 firewall + 1 load-balancer + different classification of storage + the operating systems + 2 domain controllers fully configured. + 2 web servers + code +2 file servers + shares + distributed name space +  backup vault + backup policy + automatic protection + performance monitoring + site to site connectivity.
 
 ## OMS Log Analytics Integration 
+
+The following is required for Azure Stack or Azure workloads needing OMS Log Analytic integration  into an OMS workspace. The Workspace ID and Workspace Key is required to integrate workloads into Azure OMS.
+OMS is not natively available for Azure Stack and therefore these workloads will integrate into an existing OMS workspace.
 
 {
                 "name": "Microsoft.EnterpriseCloud.Monitoring",
