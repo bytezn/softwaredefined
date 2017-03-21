@@ -44,7 +44,6 @@ This template will build a small datacentre, comprising of 2 domain controllers
 ## Automatic backup added to each server in a multi-server deployment.
 This template will add to the template above by adding automatic data protection to the attached VMs. DSC configuration does the automation of each tier.
 
-
 ## Parameters
 
 ## Vault & Policy
@@ -75,3 +74,20 @@ Mandatory parameters required to automatically configure the backup of the VMs b
  vm;iaasvmcontainerv2;my-resource-group;my-arm-vm
  resource ids
 /subscriptions/subscriptionid/resourceGroups/resourceGroupName/p  roviders/Microsoft.Compute/virtualMachines/my-arm-vm
+
+# # 9 Server datacenter with apps + Backup + OMS Log Analytics** NEW
+
+That is 6 servers + 1 firewall + 1 load-balancer + different classification of storage + the operating systems + 2 domain controllers fully configured. + 2 web servers + code +2 file servers + shares + distributed name space +  backup vault + backup policy + automatic protection + performance monitoring + site to site connectivity.
+
+OMS Log Analytics Integration 
+
+{
+                "name": "Microsoft.EnterpriseCloud.Monitoring",
+                "type": "extensions",
+                **********
+				
+                "settings": {
+                   "workspaceId": "[parameters('workspaceId')]"
+                    },
+                    "protectedSettings": {
+                        "workspaceKey": "[parameters('workspaceKey')]"
