@@ -12,9 +12,11 @@ It is important to node that as you use these templates, it is important to unde
 
 ## How to Use Templates
 
-In this repository some examples of Hybrid software defined datacenters.  You will require a valid Azure Subscription to test these deployments. You will also be requested to enter parameters for each deployment. 
+In this repository are some examples of Hybrid software defined datacenters.  You will require a valid Azure Subscription to test these deployments. You will also be requested to enter parameters for each deployment. 
 
 These deployments will automatically configure a private network, install the servers and make the appropriate configurations as requested without further input. A total end to end experience.
+
+
 
 
 ## Active directory + domain joined file server.
