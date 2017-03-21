@@ -1,4 +1,4 @@
-# Hybrid Defined Datacenter ARM Templates Across Azure and Azure Stack - Lawrance Reddy
+# Hybrid Defined Datacenter ARM Templates Across Azure and Azure Stack with OMS Integration - Lawrance Reddy
 ## Single-Click deploy at
 http://www.cloudlogic.expert/single-post/2016/09/05/The-Software-Defined-Datacentre
 
