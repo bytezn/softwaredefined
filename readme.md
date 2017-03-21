@@ -16,7 +16,9 @@ In this repository are some examples of Hybrid software defined datacenters.  
 
 These deployments will automatically configure a private network, install the servers and make the appropriate configurations as requested without further input. A total end to end experience.
 
+Certain templates will require configuration of the location, either local for Azure Stack or the appropriate region, eg WestUS for Azure.
 
+Where indicated below, certain features are only available for Azure.
 
 
 ## Active directory + domain joined file server.
