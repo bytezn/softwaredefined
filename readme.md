@@ -1,9 +1,9 @@
-# Software Defined Datacenter ARM Templates provided by Lawrance Reddy
+# Hybrid Defined Datacenter ARM Templates Across Azure and Azure Stack - Lawrance Reddy
 ## Deploy at
 http://www.cloudlogic.expert/single-post/2016/09/05/The-Software-Defined-Datacentre
 
 
-This repo contains infrastructure as code examples of software defined datacenters. From start to finish, these examples are layered and a stepped up approach to building complete scenarios.
+This repo contains infrastructure as code examples of Hybrid software defined datacenters. From start to finish, these examples are layered and a stepped up approach to building complete scenarios.
 You are free to download this code and reuse them as you see fit.
 This codebase is made up of certain snippets from the Azure quickstart templates, but with completely new features and capabilities. 
 
@@ -12,7 +12,7 @@ It is important to node that as you use these templates, it is important to unde
 
 ## How to Use Templates
 
-In this repository some examples of Cloudlogic software defined datacenters.  You will require a valid Azure Subscription to test these deployments. You will also be requested to enter parameters for each deployment. 
+In this repository some examples of Hybrid software defined datacenters.  You will require a valid Azure Subscription to test these deployments. You will also be requested to enter parameters for each deployment. 
 
 These deployments will automatically configure a private network, install the servers and make the appropriate configurations as requested without further input. A total end to end experience.
 
