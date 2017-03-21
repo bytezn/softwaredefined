@@ -79,7 +79,7 @@ Mandatory parameters required to automatically configure the backup of the VMs b
 
 That is 6 servers + 1 firewall + 1 load-balancer + different classification of storage + the operating systems + 2 domain controllers fully configured. + 2 web servers + code +2 file servers + shares + distributed name space +  backup vault + backup policy + automatic protection + performance monitoring + site to site connectivity.
 
-OMS Log Analytics Integration 
+## OMS Log Analytics Integration 
 
 {
                 "name": "Microsoft.EnterpriseCloud.Monitoring",
